@@ -9,10 +9,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @screen md {
+    padding: 30px 100px;
+  }
 
   > .logo {
     color: #fff;
@@ -32,6 +36,11 @@
   > .item {
     list-style: none;
     margin-left: 20px;
+    display: none;
+
+    @screen md {
+      display: block;
+    }
 
     > a {
       text-decoration: none;
@@ -44,6 +53,89 @@
         background: #fff;
         color: #2b1055;
       }
+    }
+  }
+}
+
+.mobile--menu {
+  position: relative;
+
+  @screen md {
+    display: none;
+  }
+
+  &.-active {
+    > .item {
+      transform: translate(-50%, -50%) translateY(calc(var(--i) * 60px));
+    }
+  }
+
+  > .item {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    @apply bg-white;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+
+    &.-home::before {
+      background-image: url("./images/icons/home.png");
+    }
+    &.-about::before {
+      background-image: url("./images/icons/user.png");
+    }
+    &.-work::before {
+      background-image: url("./images/icons/code.png");
+    }
+    &.-contact::before {
+      background-image: url("./images/icons/chat.png");
+    }
+
+    &::before {
+      content: "";
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  > .toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    @apply bg-white;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.6s;
+    z-index: 3;
+
+    &.-active {
+      transform: rotate(135deg);
+    }
+
+    &::before {
+      content: "";
+      background-image: url("./images/icons/plus.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -71,7 +163,6 @@
     position: absolute;
     color: #fff;
     white-space: nowrap;
-    font-size: 8rem;
     z-index: 9;
   }
 

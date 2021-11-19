@@ -1,1 +1,7 @@
-@import "./typography.scss";
+@import "./common/typography";
+@import "./common/index";
+
+//compoents
+@import "./components/Hero";
+@import "./components/App";
+@import "./components/Slider";

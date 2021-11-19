@@ -4,13 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Controller, Navigation } from 'swiper';
 
 //hooks
-import { useState, useEffect, useRef } from 'react';
-import { animated, useSprings } from 'react-spring';
+import { useState, useEffect } from 'react';
+import { animated } from 'react-spring';
 
 //styles
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-import './Slider.scss';
 
 import 'swiper/components/pagination/pagination.scss';
 
@@ -135,6 +134,7 @@ const Slider = () => {
             </Swiper >
 
             <div className='container'>
+                <h2 className='header--h2 pb-20 text-left'>Przygotowane prace</h2>
                 <Swiper
                     onSwiper={setBigSwiper}
                     {...bigSwipperSettings}
@@ -148,8 +148,8 @@ const Slider = () => {
                                     {({ isActive }: any) => (
                                         <div className='slider--item'>
                                             <div className={`description ${isActive ? '-active' : ''}`}>
-                                                <h3 className='title mb-6'>{item.title}</h3>
-                                                <p>{item.description}</p>
+                                                <h3 className='header--h4 mb-6'>{item.title}</h3>
+                                                <p className='paragraph--component -small pb-6 md:pb-10'>{item.description}</p>
 
                                                 <div className='slide--nav'>
                                                     <div className='nav--wrapper -left' onClick={handlePrevSlide}>

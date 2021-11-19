@@ -9,9 +9,6 @@ import moon from './images/hero/moon.png';
 import moutains_behind from './images/hero/mountains_behind.png';
 import moutains_front from './images/hero/mountains_front.png';
 
-//style 
-import './Hero.scss';
-
 const Hero = () => {
 
     const moonRef = useRef<HTMLImageElement>(null);

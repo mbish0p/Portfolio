@@ -7,12 +7,6 @@ import SwiperCore, { Pagination, Controller, Navigation } from 'swiper';
 import { useState, useEffect } from 'react';
 import { animated } from 'react-spring';
 
-//styles
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
-
-import 'swiper/components/pagination/pagination.scss';
-
 // install Swiper modules
 SwiperCore.use([Pagination, Controller, Navigation]);
 
@@ -50,9 +44,7 @@ const Slider = () => {
         }
     };
 
-
     const [elementsList, setElementsList] = useState([] as any[]);
-
 
     useEffect(() => {
 
@@ -134,7 +126,6 @@ const Slider = () => {
             </Swiper >
 
             <div className='container'>
-                <h2 className='header--h2 pb-20 text-left'>Przygotowane prace</h2>
                 <Swiper
                     onSwiper={setBigSwiper}
                     {...bigSwipperSettings}

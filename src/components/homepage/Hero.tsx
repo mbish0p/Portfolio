@@ -4,10 +4,10 @@ import React from "react";
 import { useRef, useEffect, useState } from "react";
 
 //assets
-import stars from './images/hero/stars.png';
-import moon from './images/hero/moon.png';
-import moutains_behind from './images/hero/mountains_behind.png';
-import moutains_front from './images/hero/mountains_front.png';
+import stars from '../../images/hero/stars.png';
+import moon from '../../images/hero/moon.png';
+import moutains_behind from '../../images/hero/mountains_behind.png';
+import moutains_front from '../../images/hero/mountains_front.png';
 
 const Hero = () => {
 

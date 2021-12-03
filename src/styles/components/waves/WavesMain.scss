@@ -1,0 +1,59 @@
+.waves--container {
+  height: 50vh;
+  > .section {
+    padding: 15vh 0;
+    position: relative;
+
+    > .container {
+      text-align: center;
+    }
+
+    &.-red {
+      background-color: #8f1818;
+    }
+
+    &.-blue {
+      background-color: #1c5e9c;
+    }
+
+    &.-yellow {
+      background-color: #000000;
+    }
+
+    &.-green {
+      background-color: #19692e;
+    }
+
+    &.-purple {
+      background-color: #581d6e;
+    }
+
+    &.-orange {
+      background-color: #733c1f;
+    }
+  }
+}
+
+.custom--wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.layer1 {
+  background-image: url("../../../images/waves/layered-waves-haikei.svg");
+}

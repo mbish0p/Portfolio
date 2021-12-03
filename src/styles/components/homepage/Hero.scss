@@ -84,16 +84,16 @@
     transition-delay: calc(0.1s * var(--i));
 
     &.-home::before {
-      background-image: url("../../images/icons/home.png");
+      background-image: url("../../../images/icons/home.png");
     }
     &.-about::before {
-      background-image: url("../../images/icons/user.png");
+      background-image: url("../../../images/icons/user.png");
     }
     &.-work::before {
-      background-image: url("../../images/icons/code.png");
+      background-image: url("../../../images/icons/code.png");
     }
     &.-contact::before {
-      background-image: url("../../images/icons/chat.png");
+      background-image: url("../../../images/icons/chat.png");
     }
 
     &::before {
@@ -126,7 +126,7 @@
 
     &::before {
       content: "";
-      background-image: url("../../images/icons/plus.png");
+      background-image: url("../../../images/icons/plus.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;

@@ -4,8 +4,11 @@
 @import "swiper/components/pagination/pagination.scss";
 
 //compoents
+//common
+@import "./components/common/Modal";
+//main
 @import "./components/homepage/Hero";
 @import "./components/homepage/App";
 @import "./components/homepage/Slider";
-
+//waves
 @import "./components/waves/WavesMain";

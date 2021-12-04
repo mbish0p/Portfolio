@@ -1,6 +1,9 @@
 import React from "react";
 import KUTE from 'kute.js';
 
+//components
+import InfoModal from "../common/modals/InfoModal";
+
 //hooks 
 import { useEffect } from 'react';
 
@@ -23,6 +26,7 @@ const WavesMain = () => {
 
     return (
         <div className='waves--container'>
+            <InfoModal />
             <section className='section -red'>
                 <svg className='blob2' id="visual" viewBox="0 0 450 450" width="450" height="450" xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1">

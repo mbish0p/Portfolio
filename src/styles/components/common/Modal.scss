@@ -1,0 +1,58 @@
+.modal--background {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.modal--container {
+  position: absolute;
+  width: 80%;
+  max-width: 50rem;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+
+  > .head {
+    @apply bg-blue-info;
+    padding: 1rem 2rem;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  > .content {
+    @apply bg-white;
+    padding: 3rem 2rem;
+  }
+}
+
+.info--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.modal--icon {
+  background-image: url("../../../images/icons/info1.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 3rem;
+}
+
+.close--icon {
+  background-image: url("../../../images/icons/close.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}

@@ -33,7 +33,8 @@ module.exports = {
       'gray-light': '#f5f1f0',
       'sand': '#d0c9bf',
       'gray-dark': '#353535',
-      'sand-dark': '#636363'
+      'sand-dark': '#636363',
+      'blue-info': '#4287f5'
     },
     borderWidth: {
       DEFAULT: '1px',

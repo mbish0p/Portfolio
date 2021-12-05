@@ -54,6 +54,11 @@ h6 {
 .paragraph--component {
   @apply text-white;
   font-size: 1.8rem;
+
+  &.-big {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
 
 .-black {

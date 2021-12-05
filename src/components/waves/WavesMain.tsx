@@ -5,9 +5,12 @@ import KUTE from 'kute.js';
 import InfoModal from "../common/modals/InfoModal";
 
 //hooks 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const WavesMain = () => {
+    const modalTitle = 'Wawes and SVGs morphing animations';
+    const modalDescription = 'While in some cases you might be able to create SVG morphing animations via CSS3 transition, this component was developed to provide various solutions for working with complex shapes, bringing convenience, resources and clarity to one of the most complex types of animation.';
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         KUTE.fromTo('#blob1', { path: '#blob1' }, { path: '#blob2' }, {
@@ -22,11 +25,17 @@ const WavesMain = () => {
             offset: 1000,
             yoyo: true
         }).start();
+
+        setIsModalOpen(true);
     }, []);
+
+    const closeCallback = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <div className='waves--container'>
-            <InfoModal />
+            <InfoModal open={isModalOpen} closeCallback={closeCallback} lead={modalTitle} description={modalDescription} />
             <section className='section -red'>
                 <svg className='blob2' id="visual" viewBox="0 0 450 450" width="450" height="450" xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1">

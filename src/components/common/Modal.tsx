@@ -29,7 +29,6 @@ const Modal = ({ children, open, closeCallback, type }: Props) => {
         const spring = useSpring({ opacity: isOpen ? 1 : 0 });
 
         const handleClose = () => {
-                console.log('click', open);
                 setIsOpen(false);
                 closeCallback();
         };

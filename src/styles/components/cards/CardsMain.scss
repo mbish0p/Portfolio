@@ -1,0 +1,16 @@
+.cards--wrapper {
+  background: #282c34;
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+
+.cards--container {
+  > .card {
+    width: 80%;
+    margin-left: 10%;
+    height: 300px;
+    margin-bottom: 3rem;
+    background: #553b7c;
+    cursor: pointer;
+  }
+}

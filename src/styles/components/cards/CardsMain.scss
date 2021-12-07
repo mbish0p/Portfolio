@@ -55,3 +55,28 @@
     transform: translateY(-50%);
   }
 }
+
+@screen md {
+  .cards--container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > .card {
+      width: 48%;
+    }
+  }
+
+  .card--image {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@screen xl {
+  .cards--container {
+    > .card {
+      width: 32%;
+    }
+  }
+}

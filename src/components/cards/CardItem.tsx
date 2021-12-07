@@ -1,15 +1,20 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 //libararies
 import { animated, useSpring, to } from 'react-spring';
 import { useGesture } from '@use-gesture/react';
 
-const CardItem = () => {
+// //types 
+import { Card } from '../../types/index';
 
-        const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20;
-        const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
+type Props = {
+        item: Card;
+};
 
-        const ref = useRef();
+const CardItem = ({ item }: Props) => {
+
+        const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 40;
+        const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 40;
 
         const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
                 () => ({
@@ -33,11 +38,9 @@ const CardItem = () => {
                                         rotateY: calcY(px, x.get()),
                                         scale: 1.1,
                                 });
-                        console.log('moving', state);
                 },
                 onHover: (state) => {
                         !state.hovering && api({ rotateX: 0, rotateY: 0, scale: 1 });
-                        console.log(state);
                 }
         });
 
@@ -55,7 +58,9 @@ const CardItem = () => {
                                 rotateZ,
                         }}
                 >
-                        <p>hi</p>
+                        <div className='card--image' style={{ backgroundImage: `url(${item.avatar})` }} />
+                        <p className='paragraph--component -big text-center mb-4'>{item.name}</p>
+                        <p className='paragraph--component text-center'>{item.description}</p>
                 </animated.div>
         );
 };

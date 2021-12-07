@@ -5,12 +5,53 @@
 }
 
 .cards--container {
+  margin: 4rem 0;
   > .card {
-    width: 80%;
-    margin-left: 10%;
-    height: 300px;
-    margin-bottom: 3rem;
-    background: #553b7c;
+    width: 100%;
+    min-height: 250px;
+    margin-bottom: 2rem;
+    background: linear-gradient(
+      90deg,
+      rgba(85, 59, 124, 1) 0%,
+      rgba(80, 0, 200, 1) 100%
+    );
+    border-radius: 15px;
     cursor: pointer;
+    padding: 2rem;
+    overflow: hidden;
+  }
+}
+
+.card--image {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 6rem;
+  height: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    @apply bg-white;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    @apply bg-white;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

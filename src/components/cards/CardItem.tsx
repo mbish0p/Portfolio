@@ -15,14 +15,14 @@ const CardItem = ({ item }: Props) => {
 
     const ref = useRef<HTMLDivElement>(null);
 
-    const calcX = (y: number, ly: number) => {
+    const calcX = (y: number) => {
         if (ref.current) {
             const position = ref.current.getBoundingClientRect();
             const elCenter = (position.y + ref.current.clientHeight / 2);
             return -(y - elCenter) / 40;
         }
     };
-    const calcY = (x: number, lx: number) => {
+    const calcY = (x: number) => {
         if (ref.current) {
             const position = ref.current.getBoundingClientRect();
             const elCenter = (position.x + ref.current.clientWidth / 2);
@@ -48,8 +48,8 @@ const CardItem = ({ item }: Props) => {
             const { xy: [px, py], dragging } = state;
             !dragging &&
                 api({
-                    rotateX: calcX(py, y.get()),
-                    rotateY: calcY(px, x.get()),
+                    rotateX: calcX(py),
+                    rotateY: calcY(px),
                     scale: 1.05,
                 });
         },

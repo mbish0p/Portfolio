@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import App from "../components/homepage/App";
 import WavesMain from "../components/waves/WavesMain";
 import CardsMain from "../components/cards/CardsMain";
-import MenuMain from "../components/menus/MenuMain";
+import VerticalPage from "../components/vertical-page/VerticalPage";
 
 const Routing = () => {
     return (
@@ -13,7 +13,7 @@ const Routing = () => {
             <Route path='/' element={<App />} />
             <Route path='/waves' element={<WavesMain />} />
             <Route path='/cards' element={<CardsMain />} />
-            <Route path='/menu' element={<MenuMain />} />
+            <Route path='/verticals' element={<VerticalPage />} />
         </Routes>
     );
 };

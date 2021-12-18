@@ -1,3 +1,18 @@
+.verticle--wrapper {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @apply bg-black;
+  }
+}
+
 .slide--background {
   background-position: center;
   background-size: cover;
@@ -25,4 +40,6 @@
 .menu--body {
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
 }

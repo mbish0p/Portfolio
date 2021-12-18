@@ -1,8 +1,10 @@
 import React from 'react';
+import { useRef, useEffect } from 'react';
 
 //libraries
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from 'swiper';
+import { animated, useSpring } from 'react-spring';
 
 //assets
 import background1 from '../../images/vertical-slider/background1.jpg';
@@ -50,33 +52,77 @@ const items = [
 SwiperCore.use([Mousewheel, Pagination]);
 
 const VerticalPage = () => {
-    const swipperSettings = {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (ref.current)
+            ref.current.style.backgroundImage = `url(${items[0].backgroundImage})`;
+    }, []);
+
+    const [{ rotateX, rotateY }, api] = useSpring(
+        () => ({
+            rotateX: 0,
+            rotateY: 0,
+            config: { mass: 200, tension: 700, friction: 80 },
+        })
+    );
+
+    const handlePrevStart = (swiper: any) => {
+        if (ref.current)
+            ref.current.style.backgroundImage = `url(${swiper.slides[swiper.activeIndex].getAttribute('data-image')})`;
+        api({ rotateX: -1.5 });
+    };
+
+    const handlePrevEnd = () => {
+        api({ rotateX: 0 });
+    };
+
+    const handleNextStart = (swiper: any) => {
+        if (ref.current)
+            ref.current.style.backgroundImage = `url(${swiper.slides[swiper.activeIndex].getAttribute('data-image')})`;
+        api({ rotateX: 1.5 });
+    };
+
+    const handleNextEnd = () => {
+        api({ rotateX: 0, });
     };
 
     return (
-        <div className='menu--body'>
-            <Swiper
-                direction={'vertical'}
-                slidesPerView={'auto'}
-                mousewheel={true}
-                pagination={true}
-                loop={true}
-                {...swipperSettings}
+        <div ref={ref} className='verticle--wrapper'>
+            <animated.div className='menu--body'
+                style={{
+                    transform: 'perspective(1500px)',
+                    rotateX,
+                    rotateY
+                }}
             >
-                {
-                    items.map((item) => {
-                        return (
-                            <SwiperSlide>
-                                <div className='slide--background' style={{ backgroundImage: `url(${item.backgroundImage})` }}>
-                                    <div className='footer'>
-                                        <h5 className='header--h5'>{item.description}</h5>
+                <Swiper
+                    direction={'vertical'}
+                    slidesPerView={'auto'}
+                    mousewheel={true}
+                    pagination={true}
+                    loop={true}
+                    speed={700}
+                    onSlidePrevTransitionStart={handlePrevStart}
+                    onSlidePrevTransitionEnd={handlePrevEnd}
+                    onSlideNextTransitionStart={handleNextStart}
+                    onSlideNextTransitionEnd={handleNextEnd}
+                >
+                    {
+                        items.map((item) => {
+                            return (
+                                <SwiperSlide data-image={item.backgroundImage}>
+                                    <div className='slide--background' style={{ backgroundImage: `url(${item.backgroundImage})` }}>
+                                        <div className='footer'>
+                                            <h5 className='header--h5'>{item.description}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })
-                }
-            </Swiper>
+                                </SwiperSlide>
+                            );
+                        })
+                    }
+                </Swiper>
+            </animated.div>
         </div>
     );
 };

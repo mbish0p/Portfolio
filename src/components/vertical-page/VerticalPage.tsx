@@ -107,6 +107,7 @@ const VerticalPage = () => {
                     onSlidePrevTransitionEnd={handlePrevEnd}
                     onSlideNextTransitionStart={handleNextStart}
                     onSlideNextTransitionEnd={handleNextEnd}
+                    className='vertical--slider'
                 >
                     {
                         items.map((item) => {

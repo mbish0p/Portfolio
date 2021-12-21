@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Controller, Navigation } from 'swiper';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 
 //hooks
 import { useState, useEffect } from 'react';
 import { animated } from 'react-spring';
 
 // install Swiper modules
-SwiperCore.use([Pagination, Controller, Navigation]);
+SwiperCore.use([Pagination, Navigation]);
 
 const Slider = () => {
 
@@ -16,33 +16,44 @@ const Slider = () => {
     const [bigSwiper, setBigSwiper] = useState<SwiperCore>();
 
     const smallSwipperSettings = {
-        slidesPerView: 'auto' as 'auto',
         spaceBetween: 10,
         loop: true,
-        loopedSlides: 5,
         allowTouchMove: false,
-        slideToClickedSlide: true,
+        initialSlide: 2,
+        slideToClickedSlide: false,
+        breakpoints: {
+            1054: {
+                slidesPerView: 2.2
+            }
+        }
     };
 
     const bigSwipperSettings = {
-        slidesPerView: 1,
         loop: true,
-        allowTouchMove: false,
-        loopedSlides: 5,
-        slideToClickedSlide: true,
+        initialSlide: 0,
+        allowTouchMove: false
     };
 
     const handlePrevSlide = () => {
-        if (bigSwiper) {
+        if (smallSwiper && bigSwiper) {
             bigSwiper.slidePrev();
+            smallSwiper.slidePrev()
         }
     };
 
     const handleNextSlide = () => {
-        if (bigSwiper) {
+        if (smallSwiper && bigSwiper) {
             bigSwiper.slideNext();
+            smallSwiper.slideNext()
         }
     };
+
+    const handleNextClick = (isNext:boolean) =>{
+        if(smallSwiper && bigSwiper){
+            smallSwiper.slideNext()
+            bigSwiper.slideNext();
+        }
+    }
 
     const [elementsList, setElementsList] = useState([] as any[]);
 
@@ -105,18 +116,23 @@ const Slider = () => {
             <Swiper
                 onSwiper={setSmallSwiper}
                 {...smallSwipperSettings}
-                controller={{ control: bigSwiper }}
                 className='small--slider'
             >
                 {
-                    elementsList.map((item, i) => {
+                    elementsList.map((item) => {
                         return (
                             <SwiperSlide className='slider--wrapper'
                                 data-id={item.id}
                                 data-title={item.title}
+                                key={item.id}
                             >
-                                {({ isActive }: any) => (
-                                    <animated.div className='slider--item' ></animated.div>
+                                {({ isNext }: any) => (
+                                    <animated.div className='slider--item' 
+                                    onClick={()=>handleNextClick(isNext)}
+                                    >
+                                        <h1>{item.title}</h1>
+                                        <p>{item.description}</p>
+                                    </animated.div>
                                 )
                                 }
                             </SwiperSlide>
@@ -129,13 +145,12 @@ const Slider = () => {
                 <Swiper
                     onSwiper={setBigSwiper}
                     {...bigSwipperSettings}
-                    controller={{ control: smallSwiper }}
                     className='big--slider bigSlider'
                 >
                     {
-                        elementsList.map((item, i) => {
+                        elementsList.map((item) => {
                             return (
-                                <SwiperSlide className='slider--wrapper' data-id={item.id}>
+                                <SwiperSlide className='slider--wrapper' data-id={item.id} key={item.id}>
                                     {({ isActive }: any) => (
                                         <div className='slider--item'>
                                             <div className={`description ${isActive ? '-active' : ''}`}>

@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 //libraries
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from 'swiper';
-import { animated, useSpring } from 'react-spring';
+import { animated } from 'react-spring';
 
 //assets
 import background1 from '../../images/vertical-slider/background1.jpg';
@@ -59,43 +59,22 @@ const VerticalPage = () => {
             ref.current.style.backgroundImage = `url(${items[0].backgroundImage})`;
     }, []);
 
-    const [{ rotateX, rotateY }, api] = useSpring(
-        () => ({
-            rotateX: 0,
-            rotateY: 0,
-            config: { mass: 200, tension: 700, friction: 80 },
-        })
-    );
-
     const handlePrevStart = (swiper: any) => {
-        if (ref.current)
+        if (ref.current){
             ref.current.style.backgroundImage = `url(${swiper.slides[swiper.activeIndex].getAttribute('data-image')})`;
-        api({ rotateX: -1.5 });
-    };
-
-    const handlePrevEnd = () => {
-        api({ rotateX: 0 });
+        }
     };
 
     const handleNextStart = (swiper: any) => {
-        if (ref.current)
+        if (ref.current){
             ref.current.style.backgroundImage = `url(${swiper.slides[swiper.activeIndex].getAttribute('data-image')})`;
-        api({ rotateX: 1.5 });
-    };
-
-    const handleNextEnd = () => {
-        api({ rotateX: 0, });
+            ref.current.classList.add('-next')
+        }
     };
 
     return (
         <div ref={ref} className='verticle--wrapper'>
-            <animated.div className='menu--body'
-                style={{
-                    transform: 'perspective(1500px)',
-                    rotateX,
-                    rotateY
-                }}
-            >
+            <div className='menu--body'>
                 <Swiper
                     direction={'vertical'}
                     slidesPerView={'auto'}
@@ -104,9 +83,7 @@ const VerticalPage = () => {
                     loop={true}
                     speed={700}
                     onSlidePrevTransitionStart={handlePrevStart}
-                    onSlidePrevTransitionEnd={handlePrevEnd}
                     onSlideNextTransitionStart={handleNextStart}
-                    onSlideNextTransitionEnd={handleNextEnd}
                     className='vertical--slider'
                 >
                     {
@@ -123,7 +100,7 @@ const VerticalPage = () => {
                         })
                     }
                 </Swiper>
-            </animated.div>
+            </div>
         </div>
     );
 };

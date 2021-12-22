@@ -1,10 +1,12 @@
 import React from 'react';
 import { useRef, useEffect } from 'react';
 
+//components
+import VerticalMenu from './VerticalMenu';
+
 //libraries
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from 'swiper';
-import { animated } from 'react-spring';
 
 //assets
 import background1 from '../../images/vertical-slider/background1.jpg';
@@ -74,6 +76,7 @@ const VerticalPage = () => {
 
     return (
         <div ref={ref} className='verticle--wrapper'>
+            <VerticalMenu />
             <div className='menu--body'>
                 <Swiper
                     direction={'vertical'}

@@ -75,6 +75,10 @@ h6 {
   }
   .header--h2 {
     font-size: 6rem;
+
+    &.-small {
+      font-size: 5rem;
+    }
   }
   .header--h3 {
     font-size: 4.8rem;

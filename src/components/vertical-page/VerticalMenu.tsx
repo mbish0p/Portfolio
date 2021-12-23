@@ -4,8 +4,12 @@ import React from "react";
 import { useState } from "react";
 import { useTransition, animated } from "react-spring";
 
+//components
+import NewsList from "./NewsList";
+
 const VerticalMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const menuTransition = useTransition(showMenu, {
     from: { opacity: 0, transform: "translate3d(0%,-100%,0)" },
@@ -13,15 +17,26 @@ const VerticalMenu = () => {
     leave: { opacity: 0, transform: "translate3d(0%,-100%,0)" },
   });
 
+  const handleOpenInfo = () => {
+    setShowInfo(true);
+    console.log(document.querySelector(".verticalFooter"), "footer");
+    const activeSlide = document.querySelector(".swiper-slide-active");
+    if (activeSlide)
+      activeSlide.querySelector(".verticalFooter")?.classList.add("-blur");
+  };
+
   return (
     <div className="vertical--menu">
+      <NewsList showInfo={showInfo} setShowInfo={setShowInfo} />
       <div className={`circle -info ${showMenu ? "opacity-0" : "opacity-100"}`}>
-        <div className="info--icon icon" />
+        <div className="info--icon icon" onClick={handleOpenInfo} />
       </div>
       <h2 className="header--h2 uppercase -small -black mb-16 mt-4 md:mt-2">
         Portfolio
       </h2>
-      <div className="circle -menu">
+      <div
+        className={`circle -menu  ${showInfo ? "opacity-0" : "opacity-100"}`}
+      >
         <div
           className="menu--icon icon"
           onClick={() => setShowMenu(!showMenu)}

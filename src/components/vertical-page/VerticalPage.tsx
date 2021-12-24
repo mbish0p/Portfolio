@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 //components
 import VerticalMenu from "./VerticalMenu";
@@ -60,13 +60,14 @@ SwiperCore.use([Mousewheel, Pagination]);
 
 const VerticalPage = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const [verticalSwiper, setVerticalSwiper] = useState<SwiperCore>();
 
   useEffect(() => {
     if (ref.current)
       ref.current.style.backgroundImage = `url(${items[0].backgroundImage})`;
   }, []);
 
-  const handlePrevStart = (swiper: any) => {
+  const handlePrevStart = async (swiper: any) => {
     if (ref.current) {
       ref.current.style.backgroundImage = `url(${swiper.slides[
         swiper.activeIndex
@@ -85,9 +86,10 @@ const VerticalPage = () => {
 
   return (
     <div ref={ref} className="verticle--wrapper">
-      <VerticalMenu />
+      <VerticalMenu slider={verticalSwiper} />
       <div className="menu--body">
         <Swiper
+          onSwiper={setVerticalSwiper}
           direction={"vertical"}
           slidesPerView={"auto"}
           mousewheel={true}

@@ -1,15 +1,26 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-//hooks
-import { useState } from "react";
+//libraries
 import { useTransition, animated } from "react-spring";
+import SwiperCore from "swiper";
 
 //components
 import NewsList from "./NewsList";
 
-const VerticalMenu = () => {
+type Props = {
+  slider: SwiperCore | undefined;
+};
+
+const VerticalMenu = ({ slider }: Props) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+
+  useEffect(() => {
+    if (slider) {
+      showInfo ? slider.disable() : slider.enable();
+    }
+  }, [showInfo]);
 
   const menuTransition = useTransition(showMenu, {
     from: { opacity: 0, transform: "translate3d(0%,-100%,0)" },
@@ -19,7 +30,6 @@ const VerticalMenu = () => {
 
   const handleOpenInfo = () => {
     setShowInfo(true);
-    console.log(document.querySelector(".verticalFooter"), "footer");
     const activeSlide = document.querySelector(".swiper-slide-active");
     if (activeSlide)
       activeSlide.querySelector(".verticalFooter")?.classList.add("-blur");

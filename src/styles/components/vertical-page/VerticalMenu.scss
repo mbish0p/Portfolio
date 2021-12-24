@@ -176,7 +176,7 @@
   max-width: 40rem;
   z-index: 1;
   padding: 2rem 2rem 2rem 2rem;
-  display: flex;
+  display: none;
 
   > .news {
     > .title {
@@ -277,5 +277,9 @@
         }
       }
     }
+  }
+
+  .news--container {
+    display: flex;
   }
 }

@@ -31,6 +31,7 @@ const Picker = () => {
         </p>
 
         <PickerComponent />
+        <div className="yellow--cone mb-12" />
 
         <p className="paragraph--component mb-8">
           Mauris dignissim ac libero eu ultricies. Nunc eget fringilla magna,

@@ -46,7 +46,7 @@ const PickerComponent = () => {
   };
 
   return (
-    <div className="picker--wrapper">
+    <div className="component--wrapper">
       <div className="picker--nav">
         <div className="button--wrapper">
           <div
@@ -77,10 +77,12 @@ const PickerComponent = () => {
           (styles, item) =>
             item && (
               <animated.div style={styles}>
-                <h4 className="-big text-center mb-8">Woda</h4>
+                <h4 className="paragraph--component -big text-center mb-8">
+                  Woda
+                </h4>
                 <div ref={ref} className="ingredient--container">
                   <div className="content">
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Od czystości i stopnia twardości wody zależy smak i
                       klarowność piwa. Kultowe czeskie piwo Pilsner Urquell
                       warzy się tradycyjnie na bardzo miękkiej wodzie, zaś
@@ -95,10 +97,12 @@ const PickerComponent = () => {
           (styles, item) =>
             item && (
               <animated.div style={styles}>
-                <h4 className="-big text-center mb-8">SŁÓD</h4>
+                <h4 className="paragraph--component -big text-center mb-8">
+                  SŁÓD
+                </h4>
                 <div ref={ref} className="ingredient--container">
                   <div className="content">
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Słód powstaje z ziaren zbóż - najczęściej z jęczmienia,
                       jednak zdarzają się także piwa powstałe na bazie pszenicy,
                       kukurydzy, żyta, owsa, prosa, a nawet ryżu. Ziarna
@@ -108,7 +112,7 @@ const PickerComponent = () => {
                       decyduje o charakterze i stylu piwa, które powstanie na
                       końcu.
                     </p>
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Kolor i smak gotowego słodu zależy nie tylko od ziarna,
                       jego rodzaju i jakości, ale też od metody suszenia. Groll,
                       twórca kultowego czeskiego Pilsnera, jako pierwszy uzyskał
@@ -119,7 +123,7 @@ const PickerComponent = () => {
                       dymny, czasem wędzony posmak. Suszenie ziaren gorącym
                       powietrzem wydobywa ich czystą słodycz.
                     </p>
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Jednak jakość piwa zaczyna się jeszcze wcześniej: ważne są
                       warunki do uprawy zboża. Morawy, obszar leżący w
                       południowo-wschodnich Czechach, nie przypadkowo znane są
@@ -136,10 +140,12 @@ const PickerComponent = () => {
           (styles, item) =>
             item && (
               <animated.div style={styles}>
-                <h4 className="-big text-center mb-8">Chmiel</h4>
+                <h4 className="paragraph--component -big text-center mb-8">
+                  Chmiel
+                </h4>
                 <div ref={ref} className="ingredient--container">
                   <div className="content">
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Szyszki chmielu, a dokładniej zawarte w nich kwasy i
                       oleje, nadają piwu aromat, smak i gorycz. Chmiel jest jak
                       przyprawa, od której w dużym stopniu zależą dokładne cechy
@@ -151,7 +157,7 @@ const PickerComponent = () => {
                       trzykrotnie, dzięki czemu nadaje piwu nie tylko
                       charakterystyczną goryczkę, ale też głęboki aromat.
                     </p>
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Twórcy najlepszych piw dokładnie wybierają miejsce, w
                       którym uprawia się chmiel, i jego odmianę. Kiedy chmiel
                       dojrzeje, kombajny objeżdżają pola, zbierając go do
@@ -159,7 +165,7 @@ const PickerComponent = () => {
                       oddzielane od liści i łodyg. Końcowe etapy to powolne
                       suszenie, pakowanie i przewóz do browaru.
                     </p>
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Dobrą tradycją jest ręczne zbieranie i oddzielanie szyszek
                       od liści i łodyg - tak dzieje się np. w procesie
                       powstawania Pilsnera Urquella, kiedy zajmują się tym
@@ -179,10 +185,12 @@ const PickerComponent = () => {
           (styles, item) =>
             item && (
               <animated.div style={styles}>
-                <h4 className="-big text-center mb-8">DROŻDŻE</h4>
+                <h4 className="paragraph--component -big text-center mb-8">
+                  DROŻDŻE
+                </h4>
                 <div ref={ref} className="ingredient--container">
                   <div className="content">
-                    <p className="info--description -normal mb-4">
+                    <p className="paragraph--component mb-4">
                       Są używane do fermentacji piwa, a zatem dodawane w
                       końcowym etapie procesu piwowarstwa. Wyróżnia się drożdże
                       dolnej i górnej fermentacji. Piwa powstałe z

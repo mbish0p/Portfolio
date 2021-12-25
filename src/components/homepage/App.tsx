@@ -9,11 +9,12 @@ function App() {
   return (
     <div className="App">
       <Hero />
+      <About />
+
       <div className="sliders--container">
         <div className="container">
           <h2 className="header--h2 pb-20 text-left">Przygotowane prace</h2>
         </div>
-        <About />
         <Slider />
       </div>
     </div>

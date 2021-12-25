@@ -1,9 +1,25 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 //components
 import PickerComponent from "./PickerComponent";
+import InfoModal from "../common/modals/InfoModal";
 
 const Picker = () => {
+  const modalTitle = "Wawes and SVGs morphing animations";
+  const modalDescription =
+    "While in some cases you might be able to create SVG morphing animations via CSS3 transition, this component was developed to provide various solutions for working with complex shapes, bringing convenience, resources and clarity to one of the most complex types of animation.";
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const closeCallback = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="picker--wrapper">
       <div className="container">
@@ -46,6 +62,12 @@ const Picker = () => {
           Vestibulum pharetra rhoncus purus, in egestas felis fringilla ac.
         </p>
       </div>
+      <InfoModal
+        open={isModalOpen}
+        closeCallback={closeCallback}
+        lead={modalTitle}
+        description={modalDescription}
+      />
     </div>
   );
 };

@@ -4,12 +4,14 @@ import React from "react";
 import Slider from "./Slider";
 import Hero from "./Hero";
 import About from "./About";
+import Projects from "./Projects";
 
 function App() {
   return (
     <div className="App">
       <Hero />
       <About />
+      <Projects />
 
       <div className="sliders--container">
         <div className="container">

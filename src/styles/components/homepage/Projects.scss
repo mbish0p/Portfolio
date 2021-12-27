@@ -1,4 +1,6 @@
 .projects--container {
+  overflow-y: hidden;
+
   > .head {
     > .subtitle {
       max-width: 50%;
@@ -9,12 +11,16 @@
 .project--container {
   margin-bottom: 3rem;
   display: block;
+  position: relative;
 
   > .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #ddd;
+    border: solid 1px #ddd;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
 
     > .name {
       color: #6a6a6a;
@@ -30,6 +36,9 @@
     height: 0;
     padding-top: 55%;
     margin: auto;
+    border: solid 1px #ddd;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
   }
 }
 
@@ -60,5 +69,36 @@
     @apply bg-green;
     margin-right: 1rem;
     border-radius: 50%;
+  }
+}
+
+.mobile--image {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-image: url("../../../images/icons/mobile-icon.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+}
+
+@screen lg {
+  .project--container {
+    width: 49%;
+  }
+
+  .projects--container {
+    > .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    > .head {
+      margin-bottom: 4rem;
+    }
   }
 }

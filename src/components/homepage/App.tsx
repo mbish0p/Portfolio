@@ -12,10 +12,14 @@ function App() {
       <Hero />
       <About />
       <Projects />
-
       <div className="sliders--container">
         <div className="container">
-          <h2 className="header--h2 pb-20 text-left">Przygotowane prace</h2>
+          <div className="head">
+            <h2 className="header--h2 -white mb-4">Interesting components</h2>
+            <p className="paragraph--component -big -violet subtitle">
+              some interesting components
+            </p>
+          </div>
         </div>
         <Slider />
       </div>

@@ -134,6 +134,7 @@
   .swiper-slide-active,
   .swiper-slide-prev {
     opacity: 0;
+    pointer-events: none;
   }
 
   .swiper-slide-next {
@@ -265,5 +266,11 @@
         }
       }
     }
+  }
+}
+
+@screen md {
+  .sliders--container .head {
+    margin-bottom: 4rem !important;
   }
 }

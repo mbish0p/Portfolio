@@ -1,7 +1,8 @@
-.projects--container {
+.projects--container,
+.sliders--container {
   overflow-y: hidden;
 
-  > .head {
+  .head {
     > .subtitle {
       max-width: 50%;
     }

@@ -30,7 +30,7 @@ const allProjects: Project[] = [
     name: "Media For Freedom",
     href: "https://mediaforfreedom.org/",
     image: projectImage1,
-    technologies: ["preact", "react-spring", "tailwind", "scss", "vanillaJS"],
+    technologies: ["Preact", "React-spring", "Tailwind", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -38,7 +38,7 @@ const allProjects: Project[] = [
     name: "Hyundai Electric Cars",
     href: "https://energianadroge.pl/",
     image: projectImage2,
-    technologies: ["preact", "react-spring", "tailwind", "scss", "vanillaJS"],
+    technologies: ["Preact", "React-spring", "Tailwind", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -46,7 +46,7 @@ const allProjects: Project[] = [
     name: "Luxtorpeda",
     href: "https://play.google.com/store/apps/details?id=pl.quantoo.luxtorpeda.app&hl=pl&gl=US",
     image: projectImage5,
-    technologies: ["react", "redux", "ionic", "scss", "vanillaJS"],
+    technologies: ["React", "Redux", "Cordova", "Ionic", "SCSS", "vanillaJS"],
     isMobile: true,
   },
   {
@@ -54,7 +54,7 @@ const allProjects: Project[] = [
     name: "Elektrolux Projekt Kuchnia",
     href: "https://projektkuchnia.onet.pl/",
     image: projectImage3,
-    technologies: ["preact", "react-spring", "tailwind", "scss", "vanillaJS"],
+    technologies: ["Preact", "React-spring", "Tailwind", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -62,7 +62,7 @@ const allProjects: Project[] = [
     name: "Pilsner Urquell",
     href: "https://nicniepobijeoryginalu.onet.pl/",
     image: projectImage4,
-    technologies: ["preact", "react-spring", "tailwind", "scss", "vanillaJS"],
+    technologies: ["Preact", "React-spring", "Tailwind", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -70,7 +70,7 @@ const allProjects: Project[] = [
     name: "Brandenburgia",
     href: "https://brandenburgia.onet.pl/",
     image: projectImage6,
-    technologies: ["preact", "tailwind", "scss", "vanillaJS"],
+    technologies: ["Preact", "Tailwind", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -78,7 +78,7 @@ const allProjects: Project[] = [
     name: "Romeloft",
     href: "https://beta.romeloft.com/",
     image: projectImage7,
-    technologies: ["Wordpress", "HTML5", "JQuery", "scss", "vanillaJS"],
+    technologies: ["Wordpress", "HTML5", "JQuery", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -86,7 +86,7 @@ const allProjects: Project[] = [
     name: "Asystent IQOS",
     href: "https://systemiqos.pl/pl/asystent-iqos/",
     image: projectImage8,
-    technologies: ["HTML5", "JQuery", "scss", "vanillaJS"],
+    technologies: ["HTML5", "JQuery", "SCSS", "vanillaJS"],
     isMobile: false,
   },
   {
@@ -94,7 +94,7 @@ const allProjects: Project[] = [
     name: "Wypróbuj IQOS",
     href: "https://systemiqos.pl/pl/wyprobuj/",
     image: projectImage9,
-    technologies: ["HTML5", "JQuery", "scss", "vanillaJS"],
+    technologies: ["HTML5", "JQuery", "SCSS", "vanillaJS"],
     isMobile: false,
   },
 ];

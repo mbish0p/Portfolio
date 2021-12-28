@@ -12,6 +12,13 @@
   margin-bottom: 3rem;
   display: block;
   position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .description--container {
+      bottom: 0;
+    }
+  }
 
   > .navbar {
     display: flex;
@@ -99,6 +106,60 @@
 
     > .head {
       margin-bottom: 4rem;
+    }
+  }
+}
+
+.description--container {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.3s;
+  background: rgba(79, 79, 79, 0.75);
+
+  > .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10%;
+
+    &.-mobile {
+      padding-top: 20%;
+
+      @media (min-width: 400px) {
+        padding-top: 10%;
+      }
+    }
+
+    > .tech {
+      background: #202020;
+      padding: 0.5rem 1rem;
+      border: solid 2px #ddd;
+      margin: 0 1rem 1rem 0;
+    }
+  }
+}
+
+@screen md {
+  .description--container {
+    > .technologies {
+      > .tech {
+        font-size: 2.8rem;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}
+
+@screen lg {
+  .description--container {
+    > .technologies {
+      > .tech {
+        font-size: 2.2rem;
+        padding: 0.5rem 1rem;
+      }
     }
   }
 }

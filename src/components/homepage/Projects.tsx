@@ -15,7 +15,16 @@ import projectImage7 from "../../images/main/projects/project_romeloft.png";
 import projectImage8 from "../../images/main/projects/project_asystent.png";
 import projectImage9 from "../../images/main/projects/project_wyprobuj.png";
 
-let projects = [
+type Project = {
+  id: number;
+  name: string;
+  href: string;
+  image: string;
+  technologies: string[];
+  isMobile: boolean;
+};
+
+const allProjects: Project[] = [
   {
     id: 1,
     name: "Media For Freedom",
@@ -33,18 +42,15 @@ let projects = [
     isMobile: false,
   },
   {
-    id: 5,
+    id: 3,
     name: "Luxtorpeda",
     href: "https://play.google.com/store/apps/details?id=pl.quantoo.luxtorpeda.app&hl=pl&gl=US",
     image: projectImage5,
     technologies: ["react", "redux", "ionic", "scss", "vanillaJS"],
     isMobile: true,
   },
-];
-
-const projects1 = [
   {
-    id: 3,
+    id: 4,
     name: "Elektrolux Projekt Kuchnia",
     href: "https://projektkuchnia.onet.pl/",
     image: projectImage3,
@@ -52,7 +58,7 @@ const projects1 = [
     isMobile: false,
   },
   {
-    id: 4,
+    id: 5,
     name: "Pilsner Urquell",
     href: "https://nicniepobijeoryginalu.onet.pl/",
     image: projectImage4,
@@ -67,9 +73,6 @@ const projects1 = [
     technologies: ["preact", "tailwind", "scss", "vanillaJS"],
     isMobile: false,
   },
-];
-
-const projects2 = [
   {
     id: 7,
     name: "Romeloft",
@@ -96,10 +99,10 @@ const projects2 = [
   },
 ];
 
-const projectsMaps = [projects1, projects2];
-
 const Projects = () => {
-  const [fetchedProjects, setFetchedProjects] = useState(1);
+  const [fetchedProjects, setFetchedProjects] = useState(0);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [isEnd, setIsEnd] = useState(false);
   const [height, setHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -110,16 +113,33 @@ const Projects = () => {
     }
   });
 
-  const { y } = useSpring({
-    y: projectsMaps.length >= fetchedProjects ? height + 310 : height + 210,
-    config: config.slow,
-  });
+  useEffect(() => {
+    fetchMoreProjects();
+  }, []);
 
   const fetchMoreProjects = () => {
-    const fetchingProjects = projectsMaps[fetchedProjects - 1];
-    projects = [...projects, ...fetchingProjects];
+    if (isEnd) return;
+
+    const isMobile = window.innerWidth < 1054 ? true : false;
+    const projectsFetchingNumber = isMobile ? 3 : 4;
+
+    const startNumber = fetchedProjects * projectsFetchingNumber;
+    const endNumber = startNumber + projectsFetchingNumber;
+
+    const tmpIsEnd = allProjects.length <= endNumber;
+    const newProjects = !tmpIsEnd
+      ? allProjects.slice(startNumber, endNumber)
+      : allProjects.slice(startNumber);
+    const tmpProjects = [...projects, ...newProjects];
+    setProjects(tmpProjects);
     setFetchedProjects(fetchedProjects + 1);
+    if (tmpIsEnd) setIsEnd(true);
   };
+
+  const { y } = useSpring({
+    y: !isEnd ? height + 320 : height + 225,
+    config: config.slow,
+  });
 
   return (
     <animated.div
@@ -135,7 +155,7 @@ const Projects = () => {
         </p>
       </div>
       <div ref={ref} className="content">
-        {projects.map((item) => {
+        {projects.map((item: Project) => {
           return (
             <a
               href={item.href}
@@ -144,6 +164,15 @@ const Projects = () => {
               key={item.id}
               className="project--container"
             >
+              <div className="description--container">
+                <div className={`technologies ${item.isMobile && "-mobile"}`}>
+                  {item.technologies.map((technology) => {
+                    return (
+                      <p className="paragraph--component tech">{technology}</p>
+                    );
+                  })}
+                </div>
+              </div>
               {item.isMobile && (
                 <div className="mobile--image" title="Mobile App" />
               )}
@@ -165,7 +194,7 @@ const Projects = () => {
         })}
       </div>
       <div>
-        {projectsMaps.length >= fetchedProjects && (
+        {!isEnd && (
           <button className="btn--component" onClick={fetchMoreProjects}>
             See more
           </button>

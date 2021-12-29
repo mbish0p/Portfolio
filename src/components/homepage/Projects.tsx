@@ -143,7 +143,7 @@ const Projects = () => {
 
   return (
     <animated.div
-      className="projects--container container"
+      className="projects--container container projectContainer"
       style={{
         height: y.to((y) => `${y}px`),
       }}

@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <About />
       <Projects />
-      <div className="sliders--container">
+      <div className="sliders--container slidersContainer">
         <div className="container">
           <div className="head">
             <h2 className="header--h2 -white mb-4">Interesting components</h2>

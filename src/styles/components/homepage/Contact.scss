@@ -23,7 +23,7 @@
       width: 100%;
       border: solid 3px;
       border-radius: 7px;
-      @apply border-violet;
+      @apply border-white;
       @apply text-white;
       outline: none;
       padding: 1.2rem 2rem;
@@ -48,10 +48,6 @@
 
       &.-textarea {
         height: 120px;
-      }
-
-      &:focus {
-        @apply border-violet;
       }
 
       &:not(:placeholder-shown):not(:focus),

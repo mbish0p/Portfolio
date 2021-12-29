@@ -5,6 +5,7 @@ import Slider from "./Slider";
 import Hero from "./Hero";
 import About from "./About";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </div>
         <Slider />
       </div>
+      <Contact />
     </div>
   );
 }

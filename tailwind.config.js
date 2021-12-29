@@ -29,6 +29,7 @@ module.exports = {
       red: '#ff5f57',
       orange: '#ffbd2e',
       green: '#28ca41',
+      error: '#ff0000',
       'primary-light': '#002e69',
       'secondary': '#00b1d3',
       'secondary-light': '#9dd4f2',

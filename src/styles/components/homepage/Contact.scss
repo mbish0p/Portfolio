@@ -1,0 +1,123 @@
+.form--container {
+  > .form {
+    margin-top: 3rem;
+  }
+}
+
+.form--column {
+  > .controlwrapper {
+    position: relative;
+    margin-bottom: 2rem;
+
+    &.-error {
+      > .input {
+        @apply border-error #{!important};
+      }
+
+      > .label {
+        @apply text-error;
+      }
+    }
+
+    > .input {
+      width: 100%;
+      border: solid 3px;
+      border-radius: 7px;
+      @apply border-violet;
+      @apply text-white;
+      outline: none;
+      padding: 1.2rem 2rem;
+      background: none;
+      font-size: 2.1rem;
+      height: 60px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Change the white to any color */
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #282c34 inset !important;
+        -webkit-text-fill-color: #fff;
+      }
+
+      &.-textarea {
+        height: 120px;
+      }
+
+      &:focus {
+        @apply border-violet;
+      }
+
+      &:not(:placeholder-shown):not(:focus),
+      &:focus {
+        & ~ .label {
+          font-size: 1.5rem;
+          top: -11px;
+          background: #282c34;
+          z-index: 10;
+          padding: 0 15px 0 7px;
+          left: 1rem;
+        }
+      }
+    }
+
+    > .label {
+      position: absolute;
+      top: 12px;
+      left: 2rem;
+      font-size: 2.1rem;
+      @apply text-white;
+      transition: all 0.2s ease-in;
+      font-weight: 700;
+    }
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@screen md {
+  .form--column {
+    > .controlwrapper {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+@screen lg {
+  .form--column {
+    > .controlwrapper {
+      width: 100%;
+      margin-bottom: 2rem;
+
+      > .input.-textarea {
+        height: 220px;
+      }
+    }
+  }
+
+  .inputs--wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    > .form--column {
+      &:first-child {
+        width: 39%;
+      }
+
+      &:last-child {
+        width: 60%;
+      }
+    }
+  }
+}

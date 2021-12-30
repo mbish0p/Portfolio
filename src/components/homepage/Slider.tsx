@@ -25,7 +25,7 @@ const Slider = () => {
     spaceBetween: 10,
     loop: true,
     allowTouchMove: false,
-    initialSlide: 2,
+    initialSlide: 3,
     slideToClickedSlide: false,
     breakpoints: {
       1054: {
@@ -36,7 +36,7 @@ const Slider = () => {
 
   const bigSwipperSettings = {
     loop: true,
-    initialSlide: 0,
+    initialSlide: 1,
     allowTouchMove: false,
   };
 

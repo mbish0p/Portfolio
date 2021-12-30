@@ -107,9 +107,7 @@ const PickerComponent = () => {
                       kukurydzy, żyta, owsa, prosa, a nawet ryżu. Ziarna
                       poddawane są kiełkowaniu i suszeniu, które polegają na
                       poddawaniu go pod działanie wysokiej temperatury przy
-                      odpowiedniej wilgotności. Ten proces w dużej mierze
-                      decyduje o charakterze i stylu piwa, które powstanie na
-                      końcu.
+                      odpowiedniej wilgotności.
                     </p>
                     <p className="paragraph--component mb-4">
                       Kolor i smak gotowego słodu zależy nie tylko od ziarna,
@@ -119,8 +117,7 @@ const PickerComponent = () => {
                       Wcześniej najczęściej stosowaną metodą było przypalanie
                       lub prażenie ziaren nad otwartym płomieniem. W zależności
                       od paliwa (różne rodzaje drewna lub torf) gotowy słód miał
-                      dymny, czasem wędzony posmak. Suszenie ziaren gorącym
-                      powietrzem wydobywa ich czystą słodycz.
+                      dymny, czasem wędzony posmak.
                     </p>
                     <p className="paragraph--component mb-4">
                       Jednak jakość piwa zaczyna się jeszcze wcześniej: ważne są
@@ -163,17 +160,6 @@ const PickerComponent = () => {
                       przyczep. Następnie, już w przetwórni, szyszki są
                       oddzielane od liści i łodyg. Końcowe etapy to powolne
                       suszenie, pakowanie i przewóz do browaru.
-                    </p>
-                    <p className="paragraph--component mb-4">
-                      Dobrą tradycją jest ręczne zbieranie i oddzielanie szyszek
-                      od liści i łodyg - tak dzieje się np. w procesie
-                      powstawania Pilsnera Urquella, kiedy zajmują się tym
-                      tapsterzy - a zatem osoby, które następnie odpowiadają za
-                      jakość trunku serwowanego w Tankovnych. Dzięki temu mogą
-                      oni poznać “swój” chmiel z bliska, a ich wiedza o trunku,
-                      który serwują, ma praktyczny charakter od samego początku
-                      aż do końca - ponieważ każdy tapster doświadczył podczas
-                      swojego szkolenia każdego etapu powstawania piwa.
                     </p>
                   </div>
                 </div>

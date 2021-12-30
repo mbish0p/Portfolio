@@ -80,6 +80,7 @@ const VerticalPage = () => {
       ref.current.style.backgroundImage = `url(${items[0].backgroundImage})`;
 
     setIsModalOpen(true);
+    window.scrollTo(0, 0);
   }, []);
 
   const handlePrevStart = async (swiper: any) => {

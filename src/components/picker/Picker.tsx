@@ -14,6 +14,7 @@ const Picker = () => {
 
   useEffect(() => {
     setIsModalOpen(true);
+    window.scrollTo(0, 0);
   }, []);
 
   const closeCallback = () => {

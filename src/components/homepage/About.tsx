@@ -1,5 +1,8 @@
 import React from "react";
 
+//assets
+import CV from "../../Mateusz-Biskup.pdf";
+
 const About = () => {
   return (
     <div className="about--container container aboutContainer">
@@ -33,7 +36,9 @@ const About = () => {
             lobortis sed nec diam.
           </p>
 
-          <button className="btn--component mt-12">Download CV</button>
+          <a href={CV} className="btn--component mt-12" download>
+            Download CV
+          </a>
         </div>
       </div>
     </div>

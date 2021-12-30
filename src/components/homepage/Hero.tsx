@@ -25,10 +25,12 @@ const Hero = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", function () {
-      let offsetY = window.scrollY;
-      starsRef.current!.style.left = offsetY * 0.25 + "px";
-      moonRef.current!.style.top = offsetY * 1.05 + "px";
-      behindRef.current!.style.top = offsetY * 0.3 + "px";
+      if (moonRef.current && starsRef.current && behindRef.current) {
+        let offsetY = window.scrollY;
+        starsRef.current.style.left = offsetY * 0.25 + "px";
+        moonRef.current.style.top = offsetY * 1.05 + "px";
+        behindRef.current.style.top = offsetY * 0.3 + "px";
+      }
     });
   }, []);
 

@@ -1,0 +1,50 @@
+.return--container {
+  position: fixed;
+  top: 1rem;
+  right: 0;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.5rem 1rem;
+  border-radius: 100% 0 0 100%;
+  border: solid 2px;
+  padding-left: 2rem;
+  border-right: none;
+  z-index: 99;
+  cursor: pointer;
+  @apply bg-white;
+  @apply border-violet;
+
+  > .arrow {
+    width: 1.2rem;
+    height: 2rem;
+    margin-right: 1.5rem;
+  }
+
+  > .header--h5 {
+    text-transform: uppercase;
+    @apply text-violet;
+  }
+}
+
+@screen sm {
+  .return--container {
+    display: flex;
+  }
+}
+
+@screen md {
+  .return--container {
+    padding: 5rem 1rem;
+    border: solid 3px;
+    border-right: none;
+    @apply border-violet;
+    padding-left: 2rem;
+
+    > .arrow {
+      width: 1.5rem;
+      height: 2.5rem;
+      margin-right: 2rem;
+    }
+  }
+}

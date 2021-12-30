@@ -1,9 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
+//libraries
+import { Link } from "react-router-dom";
+
 //components
 import PickerComponent from "./PickerComponent";
 import InfoModal from "../common/modals/InfoModal";
+import ReturnLabel from "../common/ReturnLable";
 
 const Picker = () => {
   const modalTitle = "Wawes and SVGs morphing animations";
@@ -23,9 +27,10 @@ const Picker = () => {
 
   return (
     <div className="picker--wrapper">
+      <ReturnLabel href="/" />
       <div className="container">
         <h2 className="header--h2 mb-16">Option Picker</h2>
-        <p className="paragraph--component mb-8">
+        <p className="paragraph--component mb-8 text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper
           iaculis mi, eu dignissim sem ultrices et. Vivamus libero nisi,
           pulvinar a vehicula vitae, egestas in lectus. Duis diam enim, ultrices
@@ -34,7 +39,7 @@ const Picker = () => {
           urna malesuada. Suspendisse id condimentum ligula. Ut vulputate quam
           erat, ac elementum libero tristique in.
         </p>
-        <p className="paragraph--component mb-8">
+        <p className="paragraph--component mb-8 text-justify">
           Integer hendrerit enim quis lorem ultrices, vitae congue diam
           pellentesque. Donec ornare tortor id ipsum pretium pretium. Nunc
           facilisis leo et felis viverra iaculis. Fusce porttitor eros eu
@@ -50,7 +55,7 @@ const Picker = () => {
         <PickerComponent />
         <div className="yellow--cone mb-12" />
 
-        <p className="paragraph--component mb-8">
+        <p className="paragraph--component mb-8 text-justify">
           Mauris dignissim ac libero eu ultricies. Nunc eget fringilla magna,
           sit amet efficitur nibh. Aenean urna nulla, facilisis in elit quis,
           tempor ullamcorper leo. Quisque at lobortis justo. Interdum et
@@ -62,7 +67,14 @@ const Picker = () => {
           curae; Fusce non nulla ornare, feugiat nulla non, sodales augue.
           Vestibulum pharetra rhoncus purus, in egestas felis fringilla ac.
         </p>
+
+        <div className="text-center">
+          <Link to="/" className="btn--component mt-12">
+            Return to main page
+          </Link>
+        </div>
       </div>
+
       <InfoModal
         open={isModalOpen}
         closeCallback={closeCallback}

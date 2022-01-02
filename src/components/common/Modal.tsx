@@ -1,7 +1,8 @@
 import React from "react";
+import { useState, useEffect, useRef } from "react";
 
 //hooks
-import { useState, useEffect } from "react";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 
 //libraries
 import {
@@ -23,6 +24,11 @@ const Modal = ({ children, open, closeCallback, type }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const springRef = useSpringRef();
   const transitionRef = useSpringRef();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(ref, () => {
+    closeCallback();
+  });
 
   useEffect(() => {
     setIsOpen(open);
@@ -58,7 +64,7 @@ const Modal = ({ children, open, closeCallback, type }: Props) => {
       {transition(
         (style, item) =>
           item && (
-            <animated.div className="modal--container" style={style}>
+            <animated.div className="modal--container" style={style} ref={ref}>
               <div className="head">
                 <div className="info--wrapper">
                   <div className="modal--icon" />

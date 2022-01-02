@@ -24,7 +24,7 @@ const Contact = () => {
     defaultValues,
   });
 
-  Object.keys(errors).map((key) => {
+  Object.keys(errors).forEach((key) => {
     //@ts-ignore
     const node = errors[key].ref;
     node.parentElement.classList.add("-error");

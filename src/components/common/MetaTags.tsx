@@ -1,13 +1,18 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const MetaTags = () => {
   return (
-    <Helmet>
-      <title>Mateusz Biskup</title>
-      <meta name="description" content="Portfolio created by Mateusz Biskup" />
-      <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <title>Mateusz Biskup</title>
+        <meta
+          name="description"
+          content="Portfolio created by Mateusz Biskup"
+        />
+        <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+      </Helmet>
+    </HelmetProvider>
   );
 };
 

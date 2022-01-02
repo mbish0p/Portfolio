@@ -106,6 +106,7 @@ const Projects = () => {
   const [height, setHeight] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (ref.current) {
       setHeight(ref.current.clientHeight);
@@ -115,7 +116,7 @@ const Projects = () => {
 
   useEffect(() => {
     fetchMoreProjects();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchMoreProjects = () => {
     if (isEnd) return;
@@ -166,9 +167,11 @@ const Projects = () => {
             >
               <div className="description--container">
                 <div className={`technologies ${item.isMobile && "-mobile"}`}>
-                  {item.technologies.map((technology) => {
+                  {item.technologies.map((technology, index) => {
                     return (
-                      <p className="paragraph--component tech">{technology}</p>
+                      <p className="paragraph--component tech" key={index}>
+                        {technology}
+                      </p>
                     );
                   })}
                 </div>

@@ -178,7 +178,7 @@ const Slider = () => {
         </div>
         {elementsList.map((item) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <div className="container">
                 <p className="paragraph--component -small pb-6 md:pb-10 description">
                   {item.description}

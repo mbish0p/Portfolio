@@ -140,7 +140,7 @@ const VerticalPage = () => {
         >
           {items.map((item) => {
             return (
-              <SwiperSlide data-image={item.backgroundImage}>
+              <SwiperSlide data-image={item.backgroundImage} key={item.id}>
                 <div
                   className="slide--background"
                   style={{ backgroundImage: `url(${item.backgroundImage})` }}

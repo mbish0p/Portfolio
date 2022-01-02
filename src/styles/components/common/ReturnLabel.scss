@@ -15,6 +15,11 @@
   @apply bg-white;
   @apply border-violet;
 
+  &.-lower {
+    display: flex;
+    top: 9rem;
+  }
+
   > .arrow {
     width: 1.2rem;
     height: 2rem;

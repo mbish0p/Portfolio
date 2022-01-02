@@ -9,9 +9,10 @@ import arrowLeft from "../../images/icons/arrowLeft.png";
 
 type Props = {
   href: string;
+  lower?: boolean;
 };
 
-const ReturnLabel = ({ href }: Props) => {
+const ReturnLabel = ({ href, lower }: Props) => {
   let navigate = useNavigate();
 
   const styles = useSpring({
@@ -25,12 +26,14 @@ const ReturnLabel = ({ href }: Props) => {
   });
 
   const handleTransfer = () => {
-    console.log("click");
     navigate(href, { replace: true });
   };
 
   return (
-    <div className="return--container" onClick={handleTransfer}>
+    <div
+      className={`return--container ${lower && "-lower"}`}
+      onClick={handleTransfer}
+    >
       <animated.img
         alt="return"
         src={arrowLeft}

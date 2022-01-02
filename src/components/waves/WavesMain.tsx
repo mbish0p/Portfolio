@@ -1,8 +1,12 @@
 import React from "react";
+
+//libraries
+import { Link } from "react-router-dom";
 import KUTE from "kute.js";
 
 //components
 import InfoModal from "../common/modals/InfoModal";
+import ReturnLabel from "../common/ReturnLable";
 
 //hooks
 import { useEffect, useState } from "react";
@@ -53,6 +57,7 @@ const WavesMain = () => {
         lead={modalTitle}
         description={modalDescription}
       />
+      <ReturnLabel href="/" />
       <section className="section -red">
         <svg
           className="blob2"
@@ -246,6 +251,12 @@ const WavesMain = () => {
             elementum in. Quisque libero dui, scelerisque vitae tincidunt sed,
             viverra eu libero.
           </p>
+
+          <div className="text-center">
+            <Link to="/" className="btn--component mt-16">
+              Return to main page
+            </Link>
+          </div>
         </div>
       </section>
     </div>

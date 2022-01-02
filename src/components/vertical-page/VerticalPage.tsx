@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 //components
 import VerticalMenu from "./VerticalMenu";
 import InfoModal from "../common/modals/InfoModal";
+import ReturnLabel from "../common/ReturnLable";
 
 //libraries
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -122,6 +123,7 @@ const VerticalPage = () => {
         lead={modalTitle}
         description={modalDescription}
       />
+      <ReturnLabel href="/" lower={true} />
       <VerticalMenu slider={verticalSwiper} />
       <div className="menu--body">
         <Swiper

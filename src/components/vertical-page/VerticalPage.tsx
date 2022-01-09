@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import VerticalMenu from "./VerticalMenu";
 import InfoModal from "../common/modals/InfoModal";
 import ReturnLabel from "../common/ReturnLable";
+import Loader from "../common/Loader";
 
 //libraries
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -75,6 +76,7 @@ const VerticalPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hideFooter, setHideFooter] = useState(false);
   const [verticalSwiper, setVerticalSwiper] = useState<SwiperCore>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (ref.current)
@@ -82,6 +84,7 @@ const VerticalPage = () => {
 
     setIsModalOpen(true);
     window.scrollTo(0, 0);
+    setLoading(false);
   }, []);
 
   const handlePrevStart = async (swiper: any) => {
@@ -123,6 +126,7 @@ const VerticalPage = () => {
         lead={modalTitle}
         description={modalDescription}
       />
+      <Loader isOpen={loading} />
       <ReturnLabel href="/" lower={true} />
       <VerticalMenu slider={verticalSwiper} />
       <div className="menu--body">

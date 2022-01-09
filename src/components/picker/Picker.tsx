@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import PickerComponent from "./PickerComponent";
 import InfoModal from "../common/modals/InfoModal";
 import ReturnLabel from "../common/ReturnLable";
+import Loader from "../common/Loader";
 
 const Picker = () => {
   const modalTitle = "Wawes and SVGs morphing animations";
@@ -15,10 +16,12 @@ const Picker = () => {
     "While in some cases you might be able to create SVG morphing animations via CSS3 transition, this component was developed to provide various solutions for working with complex shapes, bringing convenience, resources and clarity to one of the most complex types of animation.";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setIsModalOpen(true);
     window.scrollTo(0, 0);
+    setLoading(false);
   }, []);
 
   const closeCallback = () => {
@@ -81,6 +84,7 @@ const Picker = () => {
         lead={modalTitle}
         description={modalDescription}
       />
+      <Loader isOpen={loading} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 //components
 import Slider from "./Slider";
@@ -6,10 +7,18 @@ import Hero from "./Hero";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Loader from "../common/Loader";
 
 function App() {
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <div className="App">
+      <Loader isOpen={loading} />
       <Hero />
       <About />
       <Projects />

@@ -6,6 +6,7 @@ import ReturnLabel from "../common/ReturnLable";
 //componenets
 import CardsList from "./CardsList";
 import InfoModal from "../common/modals/InfoModal";
+import Loader from "../common/Loader";
 
 //hooks
 import { useEffect, useState } from "react";
@@ -16,10 +17,12 @@ const CardsMain = () => {
   const modalDescription =
     "While in some cases you might be able to create SVG morphing animations via CSS3 transition, this component was developed to provide various solutions for working with complex shapes, bringing convenience, resources and clarity to one of the most complex types of animation.";
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setIsModalOpen(true);
     window.scrollTo(0, 0);
+    setLoading(false);
   }, []);
 
   const closeCallback = () => {

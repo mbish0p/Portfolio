@@ -12,8 +12,12 @@ import submittedGif from "../../images/gif/tenor.gif";
 //styles
 import "react-toastify/dist/ReactToastify.min.css";
 
+//components
+import Loader from "../common/Loader";
+
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const defaultValues = {
     name: "",
@@ -51,40 +55,44 @@ const Contact = () => {
   };
 
   const onSubmit = async (data: any) => {
-    const response = await axios.post("http://localhost:5001/contact/", data);
-
-    if (response.status === 200) {
+    try {
+      setLoading(true);
+      const response = await axios.post("http://localhost:5001/contact/", data);
+      setLoading(false);
+      if (response.status === 200) {
+        toast.success(
+          <p className="paragraph--component -black">
+            Thank you, I will contact with you
+          </p>,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+      }
       setIsSubmitted(true);
-
-      toast.success("Thank you, I will contact with you", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    } else if (response.status === 400) {
-      toast.error("Some details are incorrect, please check them again", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    } else {
-      toast.error("Something went wrong", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+    } catch (error: any) {
+      let errorMessage = "";
+      error.response.data
+        ? (errorMessage = error.response.data.errorMessage)
+        : (errorMessage = "Something goes wrong 🙁");
+      toast.error(
+        <p className="paragraph--component -black">{errorMessage}</p>,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
     }
   };
 
@@ -172,6 +180,7 @@ const Contact = () => {
         <img alt="In touch" src={submittedGif} className="submmited--gif" />
       )}
       <ToastContainer />
+      <Loader isOpen={loading} />
     </div>
   );
 };

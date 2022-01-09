@@ -7,6 +7,7 @@ import KUTE from "kute.js";
 //components
 import InfoModal from "../common/modals/InfoModal";
 import ReturnLabel from "../common/ReturnLable";
+import Loader from "../common/Loader";
 
 //hooks
 import { useEffect, useState } from "react";
@@ -16,6 +17,7 @@ const WavesMain = () => {
   const modalDescription =
     "While in some cases you might be able to create SVG morphing animations via CSS3 transition, this component was developed to provide various solutions for working with complex shapes, bringing convenience, resources and clarity to one of the most complex types of animation.";
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     KUTE.fromTo(
@@ -43,6 +45,7 @@ const WavesMain = () => {
 
     setIsModalOpen(true);
     window.scrollTo(0, 0);
+    setLoading(false);
   }, []);
 
   const closeCallback = () => {
@@ -51,6 +54,7 @@ const WavesMain = () => {
 
   return (
     <div className="waves--container">
+      <Loader isOpen={loading} />
       <InfoModal
         open={isModalOpen}
         closeCallback={closeCallback}

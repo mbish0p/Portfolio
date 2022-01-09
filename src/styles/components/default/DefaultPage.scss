@@ -1,0 +1,87 @@
+.default--container {
+  background: #2b1055;
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  position: relative;
+
+  > .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  > .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+
+    .number {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .desc {
+      text-align: center;
+      line-height: 4.5rem;
+    }
+  }
+
+  .btn--component {
+    position: relative;
+    padding: 1.2rem 1.5rem;
+    z-index: 2;
+  }
+}
+
+.default--gif {
+  margin-top: 5rem;
+  z-index: 2;
+}
+
+@screen md {
+  .default--container {
+    > .wrapper {
+      flex-direction: row;
+
+      > .content {
+        min-width: 39rem;
+      }
+
+      .desc {
+        line-height: 5.5rem;
+      }
+    }
+
+    .btn--component {
+      padding: 1.2rem 4.5rem;
+    }
+  }
+
+  .default--gif {
+    max-width: 43rem;
+  }
+}
+
+@screen lg {
+  .default--gif {
+    max-width: 50rem;
+  }
+}
+
+@screen xl {
+  .default--container {
+    > .wrapper {
+      > .content {
+        min-width: 60rem;
+      }
+    }
+  }
+}

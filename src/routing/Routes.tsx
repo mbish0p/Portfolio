@@ -7,6 +7,7 @@ import WavesMain from "../components/waves/WavesMain";
 import CardsMain from "../components/cards/CardsMain";
 import VerticalPage from "../components/vertical-page/VerticalPage";
 import Picker from "../components/picker/Picker";
+import DefaultPage from "../components/default/DefaultPage";
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
       <Route path="/cards" element={<CardsMain />} />
       <Route path="/verticals" element={<VerticalPage />} />
       <Route path="/picker" element={<Picker />} />
+      <Route path="*" element={<DefaultPage />} />
     </Routes>
   );
 };

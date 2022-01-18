@@ -57,7 +57,7 @@ const Contact = () => {
   const onSubmit = async (data: any) => {
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5001/contact/", data);
+      const response = await axios.post("http://192.168.1.11/contact", data);
       setLoading(false);
       if (response.status === 200) {
         toast.success(

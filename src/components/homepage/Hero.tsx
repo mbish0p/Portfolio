@@ -37,7 +37,7 @@ const Hero = () => {
   return (
     <div className="hero--container">
       <div className="head--container">
-        <h2 className="header--h2 uppercase">Portfolio</h2>
+        <h2 className="header--h2 uppercase relative z-10">Portfolio</h2>
         <ul className="nav--items">
           <li className="item">
             <p

@@ -57,7 +57,7 @@ const Contact = () => {
   const onSubmit = async (data: any) => {
     try {
       setLoading(true);
-      const response = await axios.post("http://192.168.1.11/contact", data);
+      const response = await axios.post("http://www.mateuszbiskupdev.com/contact", data);
       setLoading(false);
       if (response.status === 200) {
         toast.success(
@@ -78,7 +78,7 @@ const Contact = () => {
       setIsSubmitted(true);
     } catch (error: any) {
       let errorMessage = "";
-      error.response.data
+      error.response
         ? (errorMessage = error.response.data.errorMessage)
         : (errorMessage = "Something goes wrong 🙁");
       toast.error(

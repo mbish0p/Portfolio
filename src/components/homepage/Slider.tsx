@@ -73,7 +73,7 @@ const Slider = () => {
         id: 1,
         title: "3D cards hover animation",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum quam nisi, a condimentum metus feugiat vitae. Sed accumsan feugiat accumsan.",
+          "Card 3D hover animation effect, based on gesture calulate deviation from the center. Possibility of using in all types of list of products or person blocks.",
         background: cards,
         href: "/cards",
       },
@@ -180,7 +180,7 @@ const Slider = () => {
           return (
             <SwiperSlide key={item.id}>
               <div className="container">
-                <p className="paragraph--component -small pb-6 md:pb-10 description">
+                <p className="paragraph--component -small pb-6 md:pb-10 description -border">
                   {item.description}
                 </p>
               </div>

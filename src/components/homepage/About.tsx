@@ -22,18 +22,16 @@ const About = () => {
             <span className="uppercase -violet">Webdeveloper</span>
           </p>
           <p className="paragraph--component main">
-            Morbi gravida, neque vitae gravida pellentesque, velit erat ultrices
-            leo, sed efficitur mi lorem ut lacus. Nulla feugiat neque eget enim
-            tristique rutrum. Nam a purus laoreet, tristique mauris at, dapibus
-            elit. Phasellus elementum bibendum lectus facilisis lacinia. Etiam
-            et scelerisque augue, nec viverra velit. Quisque sodales vitae
-            libero id cursus. Duis sit amet ipsum id risus aliquet auctor nec
-            non mi. Maecenas massa ligula, consectetur at diam non, porta
-            gravida dolor. Nulla ac augue eu purus varius mattis vel iaculis
-            ante. Sed laoreet arcu ipsum, sit amet laoreet nunc ullamcorper ac.
-            Donec mattis nibh mi. Pellentesque venenatis hendrerit elit, id
-            euismod purus vestibulum sed. Etiam id odio quis enim laoreet
-            lobortis sed nec diam.
+            Hi, I am software developer located in Poland, through my commercial
+            career I was mainly focused on creating client/graphical side of
+            websites or mobile application following coding standarts and best
+            practises. Besides that I also create all server side application to
+            my personal projects, all of them was node based applications wit.
+            In the future if is possible I want work as fullstack developer.
+            Highly interested on learning and working with new technologies with
+            positive people. After work, adept of martial arts such as boxing or
+            ju-jitsu. Fan of asian culture, outdoor activity, TV-series and
+            fantasy books.
           </p>
 
           <a href={CV} className="btn--component mt-12" download>

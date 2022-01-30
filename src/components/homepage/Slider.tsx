@@ -81,7 +81,7 @@ const Slider = () => {
         id: 2,
         title: "Vertical slider as website",
         description:
-          "Donec lectus ipsum, finibus posuere imperdiet id, porttitor ullamcorper tortor. Pellentesque nec rhoncus leo.",
+          "Vertical slider, with vertical mousewheel scroll animation. Greate and very interesting alternative for casual landing pages",
         background: vertical,
         href: "/verticals",
       },
@@ -89,7 +89,7 @@ const Slider = () => {
         id: 3,
         title: "Morphic blob and waves",
         description:
-          "Sed ultrices turpis vel nulla placerat, in dictum ex elementum. Nunc lacinia diam vel tortor iaculis tincidunt. Vivamus malesuada dolor a semper convallis.",
+          "Waves and morphic blob. Really nice diversity for background, greate effect which can give some life to websites",
         background: waves,
         href: "/waves",
       },
@@ -97,7 +97,7 @@ const Slider = () => {
         id: 4,
         title: "Option picker animation",
         description:
-          "Etiam nisi lacus, dictum vitae purus quis, posuere sodales tortor",
+          "Smooth option picker animation with height scaling container to text, animation which can be reuse in almost every website ",
         background: picker,
         href: "/picker",
       },
